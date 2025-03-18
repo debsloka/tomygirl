@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vinda, Bebel</title>
+    <style>
+        body {
+            background-color: #f8bbd0; /* Rosa claro */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #880e4f; /* Rosa Barbie forte */
+        }
+        h1 {
+            font-size: 3rem;
+            margin-top: 20%;
+            color: #d81b60; /* Rosa vibrante */
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 1.5rem;
+            color: #880e4f;
+        }
+        input[type="radio"] {
+            margin: 10px;
+        }
+        button {
+            background-color: #c2185b;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ad1457;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vinda, Bebel</h1>
+    <form onsubmit="return verificarResposta()">
+        <p class="pergunta">A Débora é a melhor namorada do mundo?</p>
+        <label>
+            <input type="radio" name="resposta" value="sim"> Sim
+        </label>
+        <label>
+            <input type="radio" name="resposta" value="nao"> Não
+        </label>
+        <label>
+            <input type="radio" name="resposta" value="talvez"> Talvez
+        </label>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        function verificarResposta() {
+            const resposta = document.querySelector('input[name="resposta"]:checked');
+            if (resposta && resposta.value === "sim") {
+                window.location.href = "resposta.html";
+                return false;
+            } else {
+                alert("Ops! Apenas 'Sim' pode prosseguir.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
